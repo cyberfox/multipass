@@ -99,7 +99,7 @@ class MultiPass
 
   CipherError = OpenSSL.const_defined?(:CipherError) ? OpenSSL::CipherError : OpenSSL::Cipher::CipherError
 
-  if Object.const_defined?(:ActiveSupport)
+  if Object.const_defined?(:ActiveSupport) && ActiveSupport.const_defined?(:Base64)
     include ActiveSupport::Base64
   else
     require 'base64'
